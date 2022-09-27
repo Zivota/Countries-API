@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* general styling for whole app */
+.countries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.light {
+  background-color: #f3f3f3;
+  color: rgb(40, 40, 40);
+}
+
+.dark {
+  background-color: rgb(24, 25, 29);
+  color: #f3f3f3;
+}
+
+/* navbar styling */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar__light {
+  background-color: white;
+}
+
+.navbar__dark {
+  background-color: rgb(34, 35, 41);
+}
+
+#nav__button {
+  padding: 1rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: rgb(90, 90, 90);
+}
+
+#nav__button i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: rgb(90, 90, 90);
+}
+
+/* main part */
+main {
+  width: 100%;
+  z-index: 1;
+  margin-top: 5rem;
+}
+
+/* styling for input and select on top of the main part of app */
+.input__holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+.input__holder input {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input__holder input::placeholder {
+  color: rgb(167, 164, 164);
+}
+
+.input__holder select {
+  width: 15rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: none;
+  color: rgb(90, 90, 90);
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.input__holder input:focus,
+.input__holder select:focus {
+  outline: none;
+}
+
+/* hero part where countries are displayed */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  min-height: 90vh;
+  width: 100%;
+}
+
+/* each country holder div */
+.country__holder {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.country__holder img {
+  width: 100%;
+  max-height: 10rem;
+}
+
+.country__info {
+  padding: 1rem 2rem;
+}
+
+.country__info h3 {
+  margin-bottom: 1rem;
+}
+
+.country__info p span {
+  font-weight: bold;
+  color: black;
+}
+
+.country__info p {
+  color: rgb(90, 90, 90);
+}
+
+.country__info a {
+  text-decoration: none;
+  padding-top: 1rem;
+}
+
+.more__info {
+  display: none;
+}
+
+.moreInfo__mainHolder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.moreInfo__mainHolder img {
+  width: 100%;
+  max-width: 40rem;
+  max-height: 30rem;
+  margin: 3rem 0;
+}
+
+.flex__responsive {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 17rem;
+  margin-top: 2rem;
+}
+
+.flex__responsive p {
+  padding: 0.25rem 0;
+}
+
+.flex__responsive span {
+  font-weight: bold;
+}
+
+#borders {
+  height: auto;
+}
+
+.showMoreInfo .more__info {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 5rem);
+  background-color: #f3f3f3;
+  z-index: 100;
+  padding: 2rem;
+  overflow-y: scroll;
+}
+
+.hideMoreInfo .more__info {
+  display: none;
+}
+
+.more__info button {
+  padding: 1rem 0;
+  width: 10rem;
+  background-color: white;
+  border: none;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* media queries */
+@media screen and (min-width: 1024px) {
+  .input__holder {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .input__holder select {
+    margin: 0;
+  }
+
+  .hero {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .country__holder {
+    width: 20%;
+  }
+
+  .showMoreInfo .more__info {
+  }
+
+  .moreInfo__mainHolder {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5rem;
+  }
+
+  .moreInfo__mainHolder {
+    width: 100%;
+  }
+
+  .moreInfo__infoHolder {
+    width: 50%;
+    max-width: 40rem;
+  }
+
+  .flex__responsive {
+    flex-direction: row;
+    height: 10rem;
+  }
+}
